@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        table {
+            width: 90%; 
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 20px;
+        }
+        th:first-child,
+        td:first-child {
+            width: 30%;
+        }
+        th:last-child,
+        td:last-child {
+            width: 70%;
+        }
+        .form-container {
+            text-align: center;
+        }
+        h1 {
+            color: blue;
+            font-size: 30px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 5px;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        label.gender-label {
+            display: inline-block;
+            width: 20px; 
+            height: 20px; 
+            border: 1px solid black;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-right: 10px;
+            position: relative;
+        }
+        input[type="radio"]:checked + label.gender-label {
+            background-color: white;
+        }
+        label.gender-label::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px; 
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        input[type="radio"]:checked + label.gender-label::before {
+            opacity: 1;
+        }
+        .gender-separator {
+            border-top: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 10px; 
+            padding-right: 10px;
+        }   
+        textarea[name="address"] {
+            width: 100%;
+            padding: 5px;
+            resize: none;
+            rows: 5;
+            columns: 6;
+        }
+        .register-button {
+            background-color: #f0f0f0; 
+            padding: 10px 20px;
+            border: 1px solid black;
+            cursor: pointer;
+            width: auto;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+        label.checkbox-label {
+            display: block;
+            width: 100%; 
+        }
+        label.agree-label {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+    <title>Task5-Syed Suhail</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Re-enter Password:</td> 
+                <td><input type="password" name="reenter_password"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label class="gender-label" for="male"></label> Male
+                    <div class="gender-separator"></div>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="gender-label" for="female"></label> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" rows="5" cols="6"></textarea></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><input type="text" name="state"></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select name="country">
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">UK</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Languages Known:</td>
+                <td>
+                    <label class="checkbox-label"><input type="checkbox" name="languages" value="english"> English</label>
+                    <label class="checkbox-label"><input type="checkbox" name="languages" value="kannada"> Kannada</label>
+                    <label class="checkbox-label"><input type="checkbox" name="languages" value="hindi"> Hindi</label>
+                    <label class="checkbox-label"><input type="checkbox" name="languages" value="telugu"> Telugu</label>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="checkbox-label"><input type="checkbox" name="declaration"> I agree to the terms and conditions</label>
+                </td>
+            </tr>
+        </table>
+        <button class="register-button">Register</button>
+        <div>
+            <p><a href="#">Login to Ethnus</a></p>
+        </div>
+    </div>
+</body>
+</html>
